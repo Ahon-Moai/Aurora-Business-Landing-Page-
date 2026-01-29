@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 body {
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Inter", sans-serif;
 }
 /* ==========================================
    1. MOBILE (Base Styles)
@@ -13,6 +13,7 @@ body {
 .left-nav {
   display: flex;
   gap: 3px;
+  animation: slideDown 0.8s ease-out forwards;
 }
 .logo {
   font-weight: 600;
@@ -27,20 +28,166 @@ body {
   background: #034546;
   width: 100%;
   height: 80px;
-  padding: 1rem 2rem;
+  padding: 1rem 1rem;
   color: white;
 }
 .right-nav {
   display: flex;
   gap: 2.5rem;
+  animation: slideDown 0.8s ease-out forwards;
 }
 .nav-items {
   display: none;
 }
-
+.trust-score {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.trust-score img {
+  height: 30px;
+  border: 2px solid white;
+  border-radius: 50%;
+  margin: -5px;
+}
 .right-nav {
 }
+.trust-rating {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 0.5rem;
+}
+.trust-rating p {
+  color: #a0b8b9;
+  font-weight: 600;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.1rem;
+}
+#star-logo {
+  color: rgb(241, 176, 63);
+}
+.hero {
+  background-color: #034546; /* The deep teal background */
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px; /* Adjust this to make the grid larger or smaller */
 
+  overflow: hidden;
+}
+.hero-main-text {
+  width: 390px;
+  margin-top: 1rem;
+  color: white;
+  font-size: 2.7rem;
+  line-height: 1;
+  font-weight: 550;
+}
+.modern-italic {
+  font-weight: 600;
+  font-style: italic;
+  font-family: "Times New Roman", Times, serif;
+  letter-spacing: 1px;
+}
+.hero-wrapper {
+  padding: 5rem 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.hero-main-para {
+  font-size: 1.1rem;
+  color: #a0b8b9;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  width: 300px;
+}
+.hero-btn {
+  background: #d4f770;
+  color: black;
+  height: 50px;
+  width: 190px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 10px;
+}
+.hero-btns {
+  display: flex;
+  align-items: center;
+}
+.hero-btn:hover {
+}
+.hero-btn-arrow {
+  background: #d4f770;
+  color: black;
+  padding: 0.8rem 0.8rem;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 13px;
+}
+.hero-img {
+  border: 15px solid #0c5354;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px); /* This creates the frosted glass look */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+.glow-circle {
+  position: absolute;
+  bottom: 5%;
+  right: 15%;
+  width: 350px;
+  height: 350px;
+  background: #12ff96; /* The glow color (bright green/teal) */
+  border-radius: 50%;
+
+  /* The Secret Sauce: */
+  filter: blur(120px);
+  opacity: 0.15; /* Keep it subtle so it doesn't wash out the image */
+  z-index: 1;
+}
+.hel {
+  opacity: 0;
+}
+.glow-circle-btm {
+  position: absolute;
+  top: 10%;
+  right: 15%;
+  width: 350px;
+  height: 350px;
+  background: #c8e6d8; /* The glow color (bright green/teal) */
+  border-radius: 50%;
+
+  /* The Secret Sauce: */
+  filter: blur(120px);
+  opacity: 0.15; /* Keep it subtle so it doesn't wash out the image */
+  z-index: 1;
+}
+/* ANIMATIONS */
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes text {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 /* ==========================================
    2. TABLETS (Portrait & Landscape)
    ========================================== */
@@ -54,13 +201,41 @@ body {
   #ham {
     display: none;
   }
+  .hel {
+    opacity: 1;
+    position: absolute;
+    top: 60%;
+    right: 38%;
+  }
   .nav-items {
     display: flex;
     font-weight: 500;
     align-items: center;
   }
+  .hero-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .hero-img {
+    width: 520px;
+    border-radius: 20px;
+    position: relative;
+  }
   .logo {
     font-size: 1.2rem;
+  }
+  .hero-main-para {
+    width: 520px;
+    font-size: 1.3rem;
+    line-height: 1.3;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  .hero-main-text {
+    width: 640px;
+    font-size: 6rem;
+    line-height: 0.9;
   }
   .navbar {
     padding: 2rem 8rem;
@@ -72,6 +247,11 @@ body {
     font-weight: 500;
     font-size: 1.1rem;
     background: white;
+  }
+  .hero-wrapper {
+    max-width: 1250px;
+    margin: auto;
+    padding-top: 5rem;
   }
 }
 
