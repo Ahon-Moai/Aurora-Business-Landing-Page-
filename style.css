@@ -1,0 +1,146 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Inter", sans-serif;
+}
+.navbar {
+  background-color: #0b4f4f;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  color: white;
+  z-index: 1000;
+}
+.navbar-wrapper {
+  animation: slideDown 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1400px;
+  margin: auto;
+  padding: 2rem 0;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.nav-links p {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+.logo {
+  display: flex;
+  align-items: center;
+}
+.logo p {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+.logo i {
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+.nav-btn {
+  display: flex;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+}
+.nav-btn-one {
+  background: white;
+  color: black;
+  font-weight: 400;
+  font-size: 1.1rem;
+  height: 40px;
+  width: 145px;
+  border: none;
+  border-radius: 10px;
+}
+.nav-btn-two {
+  background: white;
+  color: black;
+  font-weight: 400;
+
+  height: 40px;
+  width: 40px;
+  border: none;
+  border-radius: 15px;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  z-index: 1001;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 28px;
+  height: 3px;
+  background: #ffffff;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(8px, -8px);
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .nav-links {
+    gap: 1.5rem;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+    background: #000;
+  }
+  .nav-links.active {
+    transform: translateY(0);
+  }
+  .nav-btn {
+    display: none;
+  }
+  .nav-links {
+    color: black;
+    transform: translateY(-100%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    padding: 5rem 2rem 2rem 2rem;
+    gap: 2.5rem;
+    transition: transform 0.4s ease-in-out;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-links.active {
+    transform: translateY(0);
+  }
+}
