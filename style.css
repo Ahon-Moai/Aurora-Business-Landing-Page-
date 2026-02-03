@@ -22,7 +22,7 @@ body {
 }
 
 .navbar-wrapper {
-  animation: slideDown 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: slideDown 1s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -75,7 +75,8 @@ body {
 .hero-headline {
   color: white;
   font-size: 5rem;
-
+  animation: slideup 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+  animation-delay: 0.2s;
   line-height: 1.1;
   font-family: "Inter", sans-serif;
   font-weight: 500;
@@ -88,6 +89,8 @@ body {
   font-size: 1.2rem;
   color: #a8d5d5;
   width: 500px;
+  animation: slideup 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+  animation-delay: 0.2s;
 }
 
 .nav-btn-one {
@@ -141,7 +144,7 @@ body {
 }
 .hero-btn-one {
   background: #d4f770;
-
+  animation: slideleft 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   margin-top: 1rem;
   font-weight: 500;
   font-size: 1rem;
@@ -155,7 +158,7 @@ body {
 .hero-btn-two {
   margin-top: 1rem;
   background: #d4f770;
-
+  animation: slideleft 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   font-weight: 400;
   height: 45px;
   width: 45px;
@@ -294,6 +297,7 @@ body {
 
 /* TRUST SCORE */
 .trust-score {
+  animation: slideup 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -349,6 +353,26 @@ body {
   to {
     transform: translateY(0);
     opacity: 1;
+  }
+}
+@keyframes slideleft {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slideup {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 40px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
   }
 }
 
